@@ -14,7 +14,7 @@ const output_queens = (grid, n) =>  {
     return results
 }
 
-const n_queens = (n) => {
+const nQueens = (n) => {
     let grid = []
     for (let i = 0; i < n; i++) {
         let row = []
@@ -24,10 +24,7 @@ const n_queens = (n) => {
         grid.push(row)
     }
     let results = recurse(grid, 0, n)
-    console.log(results.length)
-    for (let i = 0; i < results.length; i++) {
-        console.log('[' + output_queens(results[i], n).toString() + ']')
-    }
+    return results
 }
 
 const extendMarkers = (grid, column) => {
@@ -98,4 +95,4 @@ const recurse = (grid, column, n) => {
     return copies
 }
 
-n_queens(9)
+export default nQueens
